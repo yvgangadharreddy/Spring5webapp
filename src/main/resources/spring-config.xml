@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans 		http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/mvc			http://www.springframework.org/schema/mvc/spring-mvc.xsd
+			http://www.springframework.org/schema/context 		http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/tx 			http://www.springframework.org/schema/tx/spring-tx.xsd
+			http://www.springframework.org/schema/data/jpa		http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+    <!-- <context:component-scan base-package="com.in28minutes.spring.basics"/> -->
+
+
+    <mvc:cors>
+        <mvc:mapping path="/**"
+                     allowed-origins="*"
+                     allowed-methods="POST, GET, PUT, OPTIONS, DELETE"
+                     allowed-headers="Origin, X-Requested-With, Content-Type, Accept,
+					 					X-com-invictus-login-id, X-com-invictus-partner-id, X-com-invictus-auth-token, X-com-invictus-device-id,
+										X-com-invictus-ip-address, X-com-invictus-latitude, X-com-invictus-longitude,
+										X-com-invictus-classification, X-com-invictus-app-id"
+                     exposed-headers="Content-Type, Accept,
+					 					X-com-invictus-login-id, X-com-invictus-partner-id, X-com-invictus-auth-token, X-com-invictus-device-id,
+										X-com-invictus-ip-address, X-com-invictus-latitude, X-com-invictus-longitude,
+										X-com-invictus-classification, X-com-invictus-app-id"
+                     allow-credentials="false"
+                     max-age="4800" />
+    </mvc:cors>
+
+</beans>
